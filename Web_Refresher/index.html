@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitPulse | Daily Workout & Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Accessible Header -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <h1>FitPulse</h1>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#routine">Routine</a></li>
+          <li><a href="#tracker">Hydration</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Overview Section -->
+    <section id="overview" class="intro-section">
+      <h2>Daily Fitness Summary</h2>
+      <p>Track your daily movements, review scheduled circuits, and ensure you hit your hydration goals before winding down.</p>
+    </section>
+
+    <!-- Workout Cards Section (Grid) -->
+    <section id="routine" class="routine-section">
+      <h2>Today's Circuit</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <h3>1. Goblet Squats</h3>
+          <p class="tag">Lower Body</p>
+          <p>3 sets &times; 12 reps. Focus on full depth and keeping your torso upright throughout the movement.</p>
+        </article>
+
+        <article class="card">
+          <h3>2. Push-Ups</h3>
+          <p class="tag">Upper Body</p>
+          <p>3 sets &times; 15 reps. Maintain a solid plank position without sagging the hips.</p>
+        </article>
+
+        <article class="card">
+          <h3>3. Dumbbell Rows</h3>
+          <p class="tag">Back & Core</p>
+          <p>3 sets &times; 10 reps each side. Control the eccentric phase and squeeze the shoulder blade.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Hydration Tracker Section -->
+    <section id="tracker" class="tracker-section">
+      <h2>Hydration Counter</h2>
+      <p>Aim for at least 8 glasses (250ml each) daily.</p>
+      
+      <div class="counter-box">
+        <div class="display">
+          <span id="water-count">0</span>
+          <span class="unit">glasses</span>
+        </div>
+        <p id="counter-feedback" class="feedback-text">Keep drinking water throughout your session!</p>
+        
+        <div class="button-group">
+          <button id="btn-decrement" type="button" aria-label="Decrease water count">- Remove</button>
+          <button id="btn-increment" type="button" aria-label="Increase water count">+ Add Glass</button>
+          <button id="btn-reset" type="button" class="btn-secondary" aria-label="Reset water count">Reset</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 FitPulse. Built for Web Development II Formative Assessment.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
