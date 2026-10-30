@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e9e9e9;
+  font-family: "Josefin Sans", sans-serif;
+  color: #14181d;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.header-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-top: 40px;
+}
+
+.header-nav a {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.main-content {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 950px;
+  padding: 70px 65px 0 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.article-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-title {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-size: 4.8rem;
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #14181d;
+}
+
+.lead-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: #2b2b2b;
+}
+
+.three-column-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-heading {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.column p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #2b2b2b;
+  font-weight: 400;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+}
+
+.hero-feature {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.quad-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.quad-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  padding: 10px 0 20px 0;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-info .section-heading {
+  margin-bottom: 14px;
+}
+
+.author-info p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 480px;
+}
+
+.author-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.author-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50px;
+  flex-shrink: 0;
+}
+
+.author-socials a,
+.footer-socials a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.author-socials img,
+.footer-socials img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  object-fit: contain;
+}
+
+.dark-icon {
+  filter: brightness(0);
+}
+
+.comments-container {
+  background-color: #d7d8d9;
+  margin-left: -65px;
+  margin-right: -65px;
+  padding: 45px 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.comments-container .section-heading {
+  font-size: 3rem;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comment-author {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.comment-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #222222;
+}
+
+.site-footer {
+  background-color: #14181d;
+  color: #ffffff;
+  width: 100%;
+  padding: 45px 20px 35px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+}
+
+.footer-nav a {
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.copyright {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+}
