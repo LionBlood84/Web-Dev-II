@@ -1,8 +1,8 @@
 # Clone Task 2: Responsive Layouts
 
-Your task is to create the website for 'watch.it', a made-up movie streaming service. 
+Task is to create the website for 'watch.it', a made-up movie streaming service. 
 
-You must implement the website according to the [written specification](#target-devices) and [wireframe mock-ups](wireframes) provided. For any details that have not been specified, you must make appropriate design decisions about how to implement that detail. All required changes to the design on different screen sizes are shown in the wireframes. Specific measurements and values are outlined below.
+Must implement the website according to the [written specification](#target-devices) and [wireframe mock-ups](wireframes) provided. For any details that have not been specified, you must make appropriate design decisions about how to implement that detail. All required changes to the design on different screen sizes are shown in the wireframes. Specific measurements and values are outlined below.
 
 The images and text you will need are provided in the [`assets`](assets) folder.
 
