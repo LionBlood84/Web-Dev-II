@@ -1,29 +1,126 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ---------- Design tokens (brand colours + spacing) ---------- */
+:root {
+  --black: #070410;
+  --purple: #231651;
+  --teal: #4dccbd;
+  --yellow: #eef36a;
+  --white: #ffffff;
+
+  --space-small: 16px;
+  --space-large: 16px;   /* mobile: 16px */
 }
+/* Tablet breakpoint: large spacing grows to 32px */
+@media (min-width: 720px) {
+  :root { --space-large: 32px; }
+}
+/* Desktop breakpoint: large spacing grows to 48px */
+@media (min-width: 1024px) {
+  :root { --space-large: 48px; }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-  background-color: #231651;
-  font-family: "Lato", sans-serif;
-  color: #070410;
-  line-height: 1.4;
-  min-height: 100vh;
+  margin: 0;
+  background: var(--black);
+  color: var(--black);
+  font-family: 'Lato', Arial, sans-serif;
 }
+img { display: block; max-width: 100%; }
+h1, h2 { margin: 0; font-family: 'Teko', Impact, sans-serif; font-weight: 500; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-  border: none;
+/* ---------- Buttons: Teko, 2em font, small spacing and radius ---------- */
+.btn {
+  padding: var(--space-small);
+  border: 2px solid var(--black);
+  border-radius: var(--space-small);
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Teko', Impact, sans-serif;
+  font-size: 2rem;        /* 2em relative to the 16px page font size */
+  line-height: 1;
   cursor: pointer;
+}
+.btn:hover, .btn:focus-visible { background: var(--teal); }
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-small);
+  padding: var(--space-small);
+  background: var(--purple);
+  color: var(--white);
+  box-shadow: 0 6px 0 var(--teal);
+}
+.site-header__logo { color: var(--teal); font-size: 2em; line-height: 1; }  /* 2em on mobile */
+.site-header .btn { white-space: nowrap; }
+
+/* Genre navigation is hidden on mobile */
+.site-header__nav { display: none; }
+.site-header__nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-large);   /* large spacing between navigation options */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-header__nav a { color: var(--white); text-decoration: none; }
+.site-header__nav a:hover, .site-header__nav a:focus-visible { color: var(--yellow); }
+
+/* ---------- Content container: max 900px, large spacing ---------- */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;       /* mobile: one card per row */
+  gap: var(--space-large);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-large);
+}
+
+/* ---------- Movie card (default = mobile layout, poster on top) ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  font-size: 1.5em;
+  box-shadow: 8px 8px 0 var(--teal);   /* hard offset shadow from the wireframes */
+}
+.card__poster { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-small);
+  padding: var(--space-small);
+}
+.card__text { flex: 1; }
+.card__text h2 { margin-bottom: 4px; font-size: 1.25em; line-height: 1.1; }
+.card__text p { margin: 0; font-size: 0.7em; line-height: 1.4; }  /* keeps long text readable at 1.5em cards */
+
+/* ---------- Tablet (720px and up): two cards per row ---------- */
+@media (min-width: 720px) {
+  .site-header__nav { display: block; flex: 1; }
+  .site-header__logo { font-size: 3em; }   /* 3em on tablet and desktop */
+  .content { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Desktop (1024px and up): featured + wide layouts ---------- */
+@media (min-width: 1024px) {
+  /* Featured and wide cards span both grid columns */
+  .card--featured, .card--wide { grid-column: 1 / -1; }
+
+  /* Featured: wide poster on top, text and button side by side below */
+  .card--featured .card__poster { aspect-ratio: 5 / 2; }
+  .card--featured .card__body { flex-direction: row; align-items: stretch; }
+  .card--featured .card__button { flex: 0 0 32%; }
+
+  /* Wide: poster on the left half, text and button on the right half */
+  .card--wide { flex-direction: row; }
+  .card--wide .card__poster { width: 50%; aspect-ratio: 1 / 1; }
+  .card--wide .card__body { width: 50%; }
+  .card--wide .card__button { margin-top: auto; }
 }
